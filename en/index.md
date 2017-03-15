@@ -51,9 +51,6 @@ conjure-up is available on both Ubuntu Trusty 14.04 LTS and Ubuntu Xenial
 16.04 LTS
 
 
-
-
-
 ```bash
 sudo snap install conjure-up --classic
 ```
@@ -68,7 +65,7 @@ Trusty users will need to perform some additional steps prior to getting the
 snappy version installed.
 
 
-To get a working conjure-up install on Trusty, the following needs to be run:
+To get a working **conjure-up** install on Trusty, the following needs to be run:
 
 ```bash
 sudo apt-get install snapd
@@ -91,7 +88,7 @@ sudo snap install conjure-up --classic --edge
 ```
 $ sudo snap install conjure-up --classic --beta
 ```
-for 
+for the latest beta.
 
 
 
@@ -134,14 +131,11 @@ Name  Version  Rev  Developer  Notes
 core  16.04.1  888  canonical  -
 ```
 
-
-
-
 If **lxd** is listed in the above output, make sure you do not have the Debian
 package installed by running :
 
 ```bash
-$ dpkg -l lxd
+dpkg -l lxd
 ```
 
 In order to fix this problem you’ll want to remove one of those:
@@ -193,16 +187,10 @@ To uninstall **conjure-up** itself:
 sudo snap remove conjure-up
 ```
 
-
 ### Spell Walkthrough 
-
-
 
 Follow through our screenshot walkthrough of deploying **The Canonical
 Distribution of Kubernetes**, Enterprise Kubernetes, anywhere.
-
-
-
 
 #### Spell Selection 
 
@@ -211,36 +199,18 @@ deployed. For this walkthrough we will select **Canonical Kubernetes**.
 
 !!! Note:    Once a Spell is selected you can view its **README** at any time by pressing R
 
-![spellselection](/images/walkthrough/canonical-kubernetes/spell-selection.png)
+***Figure 1: Spell selection***
 
-
-
-Figure 1: Spell selection
-
+![spellselection](../media/spell-selection.png)
 
 
 #### Cloud Selection 
 
 Next, a list of publicly supported clouds will be presented.
 
+***Figure 2: Cloud selection***
 
-
-
-
-
-
-![cloud selection](/images/walkthrough/canonical-kubernetes/cloud-selection.png)
-
-
-
-
-Figure 2: Cloud selection
-
-
-
-
-
-
+![cloud selection](../media/cloud-selection.png)
 
 #### Application List
 
@@ -250,11 +220,9 @@ to deploy each application individually or make additional configuration
 changes to the selected application (covered in [Application
 Configuration](#application-config)).
 
-![application list](/images/walkthrough/canonical-kubernetes/application-list.png)
+***Figure 3: Application list***
 
-
-Figure 3: Application list
-
+![application list](../media/application-list.png)
 
 #### Application Configuration 
 
@@ -262,10 +230,9 @@ In the configuration screen for the application you have the ability to
 configure certain aspects prior to deployment. For example, in **Figure 4**
 you can increase the amount of units to deploy of Elasticsearch.
 
-![application config](/images/walkthrough/canonical-kubernetes/application-config.png)
+***Figure 4: Application Config***
 
-Figure 4: Application Config
-
+![application config](../media/application-config.png)
 
 #### Bootstrap 
 
@@ -275,10 +242,9 @@ the current bootstrap.
 
 !!! Note: If an existing cloud is already bootstrapped you will not see this view.
 
-![bootstrap wait](/images/walkthrough/canonical-kubernetes/bootstrap-wait.png)
+***Figure 5:  Bootstrap Wait Screen***
 
-Figure 5:  Bootstrap Wait Screen
-
+![bootstrap wait](../media/bootstrap-wait.png)
 
 #### Deployment Status 
 
@@ -288,9 +254,9 @@ allocated machines, setting their relations between the applications, and
 verifying that each application starts successfully. You’ll notice that once
 the applications are ready they will have a green checkmark beside them.
 
-![deploy status](/images/walkthrough/canonical-kubernetes/deploy-status.png)
+***Figure 6: Deployment Status Screen***
 
-Figure 6: Deployment Status Screen
+![deploy status](../media/deploy-status.png)
 
 
 #### Additional Application Tasks 
@@ -305,7 +271,7 @@ display for you on the [Summary](#summary-screen).
 
 ***Figure 7: Steps Configuration***
 
-![steps config](/images/walkthrough/canonical-kubernetes/steps-config.png)
+![steps config](../media/steps-config.png)
 
 
 #### Summary 
@@ -317,15 +283,11 @@ how to access and use your **kubectl** binary along with the Kubernetes
 such as Filebeat and Topbeat.
 
 ***Figure 8: Summary***
-![summary](/images/walkthrough/canonical-kubernetes/summary.png)
+![summary](../media/summary.png)
 
 Pressing `Q` will return you back to the shell with your deployment left intact.
 
-
-
 ### Advanced Spell Summoning 
-
-
 
 **conjure-up** includes several spells in addition to supporting summoning
 spells from several remote repositories and from a local directory on your
@@ -334,26 +296,14 @@ filesystem.
 #### GitHub/BitBucket
 
 Not quite ready to push your spell to the charm registry? That’s ok, simply
-push your spell to GitHub and conjure-up can deploy from there:
-
-
-
-
-
+push your spell to GitHub and **conjure-up** can deploy from there:
 
 
 ```bash
 conjure-up battlemidget/ghost
 ```
 
-
-
-
 This would pull from GitHub repo <https://github.com/battlemidget/ghost>
-
-
-
-
 
 #### Remote Web Server
 
@@ -377,18 +327,11 @@ directory is a spell:
 conjure-up ~/spells/openstack/openstack-novalxd
 ```
 
-
 Or from **cwd**
 
 ```bash
-$ ~/spells/openstack/openstack-novalxd> conjure-up .
+~/spells/openstack/openstack-novalxd> conjure-up .
 ```
-
-
-
-
-
-
 
 #### Running in Headless Mode
 
@@ -410,32 +353,16 @@ To deploy in a headless mode you’ll need to have credentials defined if
 deploying to a Public Cloud or make sure LXD is configured if deploying to
 Localhost.
 
-
 To deploy OpenStack to a Localhost provider:
 
-
-
-
-
-
-
 ```bash
-$ conjure-up openstack-novalxd localhost
+conjure-up openstack-novalxd localhost
 ```
-
-
-
 
 If we want to deploy to a cloud like AWS:
 
-
-
-
-
-
-
 ```bash
-$ conjure-up canonical-kubernetes aws
+conjure-up canonical-kubernetes aws
 ```
 
 
@@ -453,12 +380,8 @@ deployment preferences. For example, you have a controller sitting in a data
 center named **dc1** and it houses 3 deployments named **test-deploy,
 stage-deploy, and production-deploy**.
 
-
 To accomplish a naming strategy to reflect this design you can pass in a third
 and fourth argument to **conjure-up** to define those phases:
-
-
-
 
 
 ```
@@ -466,6 +389,7 @@ conjure-up canonical-kubernetes aws dc1 test-deploy
 conjure-up canonical-kubernetes aws dc1 stage-deploy
 conjure-up canonical-kubernetes aws dc1 production-deploy
 ```
+
 ##### Customizing headless mode 
 
 Post deployment actions are exposed to the environment via environment
@@ -499,9 +423,6 @@ See http://conjure-up.io/docs/en/users/#running-in-headless-mode for more
 information on using these variables to further customize your deployment.
 ```
 
-
-
-
 In order to change it from it’s default of **\~/.ssh/id\_rsa.pub** you would
 simply do:
 
@@ -512,7 +433,7 @@ SSHPUBLICKEY=/home/bob/my-ssh-key.pub conjure-up openstack-novalxd localhost
 
 ### Advanced Usage/Additional Tips 
 
-#### Running conjure-up remotely
+#### Running **conjure-up** remotely
 
 If you ssh into a seperate machine to run **conjure-up** and you deploy spells
 such as openstack-novalxd to localhost and you want to be able to access
@@ -615,8 +536,8 @@ the [Hardware Requirements](#hardware-requirements) prior to deploying spells.
 
 ##### Failed deployments if IPv6 is enabled 
 
-Currently conjure-up does not support the use of IPv6. If you are running LXD
-and have a bridge that has IPv6 enabled conjure-up will fail and give you an
+Currently **conjure-up** does not support the use of IPv6. If you are running LXD
+and have a bridge that has IPv6 enabled **conjure-up** will fail and give you an
 explanation as to why and information for disabling IPv6.
 
 ###### Disable IPv6 on LXD versions 2.2 and below 
@@ -624,10 +545,6 @@ explanation as to why and information for disabling IPv6.
 LXD version 2.0 is the default version on Ubuntu Xenial 16.04. To disable IPv6
 you’ll need to edit `/etc/default/lxd-bridge` and make sure the following
 values are reflected below:
-
-
-
-
 
 ```no-highlight
 # IPv6
@@ -650,16 +567,7 @@ lxc network set lxdbr0 ipv6.nat false
 lxc network set lxdbr0 ipv6.address none
 ```
 
-
-
-
-
-
-
-
-
 #### OpenStack 
-
 
 ##### Deployment gets part way through and seems to hang under VSphere 
 
@@ -678,10 +586,6 @@ deployment.
 
 Please see [the Neutron Gateway charm documentation] under **Port
 Configuration** for more information.
-
-
-
-
 
 
 [Juju credentials]: https://jujucharms.com/docs/stable/credentials

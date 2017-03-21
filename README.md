@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/CanonicalLtd/docs-conjure-up.svg?branch=master)](https://travis-ci.org/CanonicalLtd/docs-conjure-up)
+
 # Documentation for Conjure-up 
 
 The documentation is written in Markdown, from which HTML is generated.

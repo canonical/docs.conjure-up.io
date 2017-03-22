@@ -28,33 +28,33 @@ navigation:
               location: index.md#uninstalling
     
     - title: Spell walkthrough
-      location: index.md#spell-walkthrough
+      location: walkthrough.md#spell-walkthrough
 
       children:
 
             - title: Spell selection
-              location: index.md#spell-selection
+              location: walkthrough.md#spell-selection
 
             - title: Cloud selection
-              location: index.md#cloud-selection
+              location: walkthrough.md#cloud-selection
 
             - title: Application list
-              location: index.md#application-list
+              location: walkthrough.md#application-list
 
             - title: Application configuration
-              location: index.md#application-configuration
+              location: walkthrough.md#application-configuration
 
             - title: Bootstrap 
-              location: index.md#bootstrap
+              location: walkthrough.md#bootstrap
             
             - title: Deployment status
-              location: index.md#deployment-status
+              location: walkthrough.md#deployment-status
 
             - title: Additional tasks
-              location: index.md#additional-application-tasks
+              location: walkthrough.md#additional-application-tasks
 
             - title: Summary
-              location: index.md#summary
+              location: walkthrough.md#summary
 
     - title: Advanced summoning
       location: index.md#advanced-spell-summoning

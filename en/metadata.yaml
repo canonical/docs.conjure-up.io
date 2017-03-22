@@ -1,0 +1,108 @@
+navigation:
+ - title: User Manual
+   location: index.md
+
+   children:
+
+    - title: Getting started
+      location: index.md#getting-started
+
+      children:
+
+            - title: Hardware requirements
+              location: index.md#hardware-requirements
+
+            - title: Installing conjure-up 
+              location: index.md#installing-conjure-up
+
+            - title: Beta versions
+              location: index.md#beta-and-development-versions
+
+            - title: Users of LXD
+              location: index.md#users-of-lxd
+
+            - title: Summon a spell
+              location: index.md#summon-a-spell
+
+            - title: Uninstalling
+              location: index.md#uninstalling
+    
+    - title: Spell walkthrough
+      location: index.md#spell-walkthrough
+
+      children:
+
+            - title: Spell selection
+              location: index.md#spell-selection
+
+            - title: Cloud selection
+              location: index.md#cloud-selection
+
+            - title: Application list
+              location: index.md#application-list
+
+            - title: Application configuration
+              location: index.md#application-configuration
+
+            - title: Bootstrap 
+              location: index.md#bootstrap
+            
+            - title: Deployment status
+              location: index.md#deployment-status
+
+            - title: Additional tasks
+              location: index.md#additional-application-tasks
+
+            - title: Summary
+              location: index.md#summary
+
+    - title: Advanced summoning
+      location: index.md#advanced-spell-summoning
+
+      children:
+
+            - title: GitHub and BitBucket
+              location: index.md#github-and-bitbucket
+
+            - title: Remote web server
+              location: index.md#remote-web-server
+
+            - title: Headless mode
+              location: index.md#running-in-headless-mode
+
+            - title: Customising deployment
+              location: index.md#customising-deployment-phases
+
+            - title: Customising headless
+              location: index.md#customising-headless-mode
+
+            - title: Running remotely
+              location: index.md#running-conjure-up-remotely
+
+    - title: Troubleshooting
+      location: index.md#troubleshooting
+
+      children:
+
+            - title: Logging
+              location: index.md#logging
+
+            - title: Unicode
+              location: index.md#unicode
+
+            - title: Error states
+              location: index.md#applications-in-error-state
+
+            - title: LXD
+              location: index.md#lxd
+
+            - title: OpenStack
+              location: index.md#openstack
+
+
+
+
+
+
+
+

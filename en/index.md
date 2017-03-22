@@ -73,8 +73,7 @@ installed with the following command:
 sudo snap install conjure-up --classic --beta
 ```
 
-For the most recent changes, probably untested and with no guarantees attached,
-install the `edge` release:
+For the most recent changes, install the `edge` release:
 
 ```bash
 sudo snap install conjure-up --classic --edge

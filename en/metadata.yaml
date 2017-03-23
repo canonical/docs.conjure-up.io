@@ -28,7 +28,7 @@ navigation:
               location: index.md#uninstalling
     
     - title: Spell walkthrough
-      location: walkthrough.md#spell-walkthrough
+      location: walkthrough.md#
 
       children:
 
@@ -57,27 +57,27 @@ navigation:
               location: walkthrough.md#summary
 
     - title: Advanced summoning
-      location: index.md#advanced-spell-summoning
+      location: usage.md#advanced-spell-summoning
 
       children:
 
             - title: GitHub and BitBucket
-              location: index.md#github-and-bitbucket
+              location: usage.md#github-and-bitbucket
 
             - title: Remote web server
-              location: index.md#remote-web-server
+              location: usage.md#remote-web-server
 
             - title: Headless mode
-              location: index.md#running-in-headless-mode
+              location: usage.md#running-in-headless-mode
 
             - title: Customising deployment
-              location: index.md#customising-deployment-phases
+              location: usage.md#customising-deployment-phases
 
             - title: Customising headless
-              location: index.md#customising-headless-mode
+              location: usage.md#customising-headless-mode
 
             - title: Running remotely
-              location: index.md#running-conjure-up-remotely
+              location: usage.md#running-conjure-up-remotely
 
     - title: Troubleshooting
       location: index.md#troubleshooting

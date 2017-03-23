@@ -201,7 +201,7 @@ The metadata for a step consists of:
 - `additional-input`: Additional configuration variables that can be changed by
   the user within conjure-up.
 
-## Additional Input
+## Additional input
 
 This section of the step describes the configuration object and how it is to be
 displayed to the user within conjure-up and how a step would utilize the result

@@ -99,4 +99,30 @@ navigation:
             - title: OpenStack
               location: troubleshoot.md#openstack
 
+ - title: Developer Manual
+   location: dev-manual.md
 
+   children:
+
+    - title: Anatomy of a spell
+      location: dev-manual.md#anatomy-of-a-conjure-up-spell
+   
+    - title: Spell metadata
+      location: dev-manual.md#spell-metadata
+
+    - title: Steps
+      location: dev-manual.md#steps
+
+      children:
+
+            - title: 00-pre-deploy
+              location: dev-manual.md#00-pre-deploy
+
+            - title: 00-deploy-done
+              location: dev-manual.md#00-deploy-done
+
+    - title: Post processing
+      location: dev-manual.md#post-processing
+
+    - title: Additional input
+      location: dev-manual.md#additional-input

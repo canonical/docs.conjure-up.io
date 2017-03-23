@@ -134,5 +134,42 @@ simply do:
 SSHPUBLICKEY=/home/bob/my-ssh-key.pub conjure-up openstack-novalxd localhost
 ```
 
+## Running conjure-up remotely
+
+If you ssh into a separate machine to run **conjure-up** and you deploy spells
+such as openstack-novalxd to localhost and you want to be able to access things
+like the `openstack dashboard`.
+
+The simplest way to accomplish this is on your local machine run the
+following:
+
+
+```bash
+sudo apt install sshuttle
+sshuttle -r <remote-host-ip> <subnet-of-localhost-deployment>
+```
+
+The subnet of localhost is going to be what **conjure-up** configured the
+network bridge for. By default this is set to **10.0.8.1/24**. Lets also say
+the remote host’s ip is **172.16.0.5** so you’ll want to do the following
+
+```bash
+sshuttle -r 172.16.0.5 10.0.8.1/24
+
+[local sudo] Password:
+client: Connected.
+```
+
+It will then ask you to enter your sudo password and once complete will let you
+know that the sshuttle is connected. From there you can open your web browser
+and access the horizon dashboard as if it was running on your local machine.
+
+Assuming the openstack-dashboard was deployed to a machine whose ip is
+10.0.8.15, you could run:
+
+```bash
+xdg-open https://10.0.8.15/horizon
+```
+
 <!-- LINKS -->
 [jujucredentials]: https://jujucharms.com/docs/stable/credentials

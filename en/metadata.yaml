@@ -80,29 +80,23 @@ navigation:
               location: usage.md#running-conjure-up-remotely
 
     - title: Troubleshooting
-      location: index.md#troubleshooting
+      location: troubleshoot.md
 
       children:
 
             - title: Logging
-              location: index.md#logging
+              location: troubleshoot.md#logging
 
             - title: Unicode
-              location: index.md#unicode
+              location: troubleshoot.md#unicode
 
             - title: Error states
-              location: index.md#applications-in-error-state
+              location: troubleshoot.md#applications-in-error-state
 
             - title: LXD
-              location: index.md#lxd
+              location: troubleshoot.md#lxd
 
             - title: OpenStack
-              location: index.md#openstack
-
-
-
-
-
-
+              location: troubleshoot.md#openstack
 
 

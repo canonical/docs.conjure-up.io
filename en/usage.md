@@ -1,3 +1,5 @@
+Title: conjure-up | Advanced Spell Summoning
+
 # Advanced Spell Summoning
 
 **conjure-up** includes several spells in addition to supporting summoning

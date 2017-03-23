@@ -57,7 +57,7 @@ navigation:
               location: walkthrough.md#summary
 
     - title: Advanced summoning
-      location: usage.md#advanced-spell-summoning
+      location: usage.md
 
       children:
 

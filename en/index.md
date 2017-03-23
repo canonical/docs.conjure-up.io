@@ -1,6 +1,7 @@
 Title: conjure-up | User manual
 TODO: Needs a considerable overhaul
       Document should be renamed
+table_of_contents: True
       
 # User Manual
 
@@ -24,7 +25,7 @@ Cloud, MAAS, or LXD.
 
 ## Getting started
 
-### Hardware requirements
+## Hardware requirements
 
 For **Public Cloud** deployments hardware requirements (*constraints*) are
 handled by the Spell authors and will automatically be allocated during deploy.
@@ -37,7 +38,7 @@ For **localhost** deployments the following setup is recommended:
 - 250G SSD with a separate block device for ZFS. Our recommendation for that
   device is 100G.
 
-### Installing conjure-up
+## Installing conjure-up
 
 `conjure-up` is available on both Ubuntu Trusty 14.04 LTS and Ubuntu Xenial
 16.04 LTS
@@ -63,7 +64,7 @@ sudo reboot
 sudo snap install conjure-up --classic
 ```
 
-#### Beta and development versions 
+## Beta and development versions 
 
 If you want to preview of the next release, the latest beta version can be
 installed with the following command:
@@ -90,7 +91,7 @@ or
 sudo snap refresh conjure-up --classic --beta
 ```
 
-#### Users of LXD 
+## Users of LXD 
 
 **conjure-up** currently only supports running a single installation of LXD.
 This means systems with LXD pre-installed, like Ubuntu Xenial Server, should not
@@ -129,7 +130,7 @@ sudo apt-get remove lxd lxd-client
 sudo apt-get purge lxd
 ```
 
-### Summon a Spell
+## Summon a Spell
 
 To deploy solutions such as OpenStack you will summon a spell:
 
@@ -147,7 +148,7 @@ conjure-up
     Several remote locations are supported - please see [Advanced Spell
     Summoning][advancedspells] for further details
 
-#### Uninstalling
+## Uninstalling
 
 To remove deployments:
 
@@ -160,6 +161,7 @@ To uninstall **conjure-up** itself:
 ```bash
 sudo snap remove conjure-up
 ```
+
 <!-- LINKS -->
 [juju]: https://jujucharms.com
 [maas]: https://maas.io/

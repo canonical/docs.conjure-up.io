@@ -1,4 +1,5 @@
 Title: conjure-up | Advanced Spell Summoning
+table_of_contents: True
 
 # Advanced Spell Summoning
 

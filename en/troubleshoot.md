@@ -1,4 +1,5 @@
 Title: conjure-up | Troubleshooting
+table_of_contents: True
 
 # Troubleshooting
 

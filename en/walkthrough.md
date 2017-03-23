@@ -1,4 +1,5 @@
 Title: Spell walkthrough
+table_of_contents: True
 
 # Spell Walkthrough
 

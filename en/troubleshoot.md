@@ -13,7 +13,7 @@ journalctl |grep conjure-up
 
 !!! Note:
     There is also a log file that is written to
-    `\$HOME/.cache/conjure-up/conjure-up.log`
+    `$HOME/.cache/conjure-up/conjure-up.log`
 
 ## Unicode
 
@@ -22,7 +22,8 @@ If the system running `conjure-up` does not have its locale defined to
 
 ```
 UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 2201:
-ordinal not in range(128)```
+ordinal not in range(128)
+```
 
 To fix you will need to set your locale accordingly. Run the following command
 to view current settings:
@@ -33,7 +34,7 @@ locale
 
 The output from the above command will appear similar to the following:
 
-```no-highlight
+```ini
 LANG=en_US.UTF-8
 LANGUAGE=en_US
 LC_CTYPE="en_US.UTF-8"
@@ -73,23 +74,25 @@ LXD version 2.0 is the default version on Ubuntu Xenial 16.04. To disable IPv6
 you’ll need to edit `/etc/default/lxd-bridge` and make sure the following
 values are reflected below:
 
-```no-highlight
-# IPv6
-## IPv6 address (e.g. 2001:470:b368:4242::1)
+```ini
+# IPv6 address (e.g. 2001:470:b368:4242::1)
 LXD_IPV6_ADDR=""
 
-### IPv6 CIDR mask (e.g. 64)LXD_IPV6_MASK=""
+# IPv6 CIDR mask (e.g. 64)
+LXD_IPV6_MASK=""
 
-### IPv6 network (e.g. 2001:470:b368:4242::/64)LXD_IPV6_NETWORK=""
+# IPv6 network (e.g. 2001:470:b368:4242::/64)
+LXD_IPV6_NETWORK=""
 
-### NAT IPv6 trafficLXD_IPV6_NAT="false"
+# NAT IPv6 traffic
+LXD_IPV6_NAT="false"
 ```
 
 ### Disable IPv6 on LXD versions 2.4 and above
 
 To disable IPv6 on your LXD bridge (`lxdbr0` by default) run the following:
 
-```bash
+```no-highlight
 lxc network set lxdbr0 ipv6.nat false
 lxc network set lxdbr0 ipv6.address none
 ```

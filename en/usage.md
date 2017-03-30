@@ -3,9 +3,21 @@ table_of_contents: True
 
 # Advanced Spell Summoning
 
-**conjure-up** includes several spells in addition to supporting summoning
-spells from several remote repositories and from a local directory on your
-filesystem.
+**conjure-up** supports summoning spells that are in various stages of
+development by the use of channels, or from remote VCS repositories, and from a local
+directory on your filesystem.
+
+## Channels
+
+Spells can be in various stages of development so channels allow users to decide
+if they want the latest features, or be part of a beta test; others may want to
+only install the most reliable software.
+
+For example, to deploy a spell from the **beta** channel run:
+
+```bash
+conjure-up canonical-kubernetes --channel beta
+```
 
 ## GitHub and BitBucket
 
@@ -115,22 +127,20 @@ You should see output similar to:
 Available environment variables:
 
 +--------------+-------------------+---------------------------------------------------------+
-| ENV          | DEFAULT           |
-|
+| ENV          | DEFAULT           |                                                         |
 +--------------+-------------------+---------------------------------------------------------+
 | SSHPUBLICKEY | ~/.ssh/id_rsa.pub | Import SSH keypairs into OpenStack. This allows you to  |
 |              |                   | access the newly deployed instances via SSH with your   |
 |              |                   | current user. If you are not sure about the location of |
 |              |                   | a ssh key leave it as is and we will create one         |
-|              |                   | automatically.
-|
+|              |                   | automatically.                                          |
 +--------------+-------------------+---------------------------------------------------------+
 
 See http://conjure-up.io/docs/en/users/#running-in-headless-mode for more
 information on using these variables to further customise your deployment.
 ```
 
-In order to change it from it’s default of **\~/.ssh/id\_rsa.pub** you would
+In order to change it from it’s default of **~/.ssh/id\_rsa.pub** you would
 simply do:
 
 ```bash
@@ -176,3 +186,4 @@ xdg-open https://10.0.8.15/horizon
 
 <!-- LINKS -->
 [jujucredentials]: https://jujucharms.com/docs/stable/credentials
+[charmstore]: https://jujucharms.com/store

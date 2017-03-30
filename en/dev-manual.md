@@ -28,10 +28,10 @@ be familiar as we build on the existing Juju bundle specification.
 
 ```no-highlight
 my-super-application>
-   - bundle.yaml 
+   - bundle.yaml
    - README.md
-   - metadata.yaml 
-   - steps/ 
+   - metadata.yaml
+   - steps/
      - 00_deploy-done
      - 00_pre-deploy
      - step-01_my_first_step
@@ -39,7 +39,7 @@ my-super-application>
 ```
 
 - If `bundle.yaml` exists in the spell directory it will be used, otherwise a
-  `bundle-location` is required. See Juju's
+  `bundle-name` is required. See Juju's
   [Using and Creating Bundles][bundles] documentation for more information.
 
 - `metadata.yaml` contains metadata for the spell. See the following section on
@@ -62,15 +62,14 @@ process certain aspects of a spell. Available properties are as follows:
 
 **options-whitelist**: Additional charm options to be exposed for editing within conjure-up.
 
-**bundle-location**: A URL of the location of a `bundle.yaml`, for example: 
-    <https://api.jujucharms.com/charmstore/v5/wiki-scalable/archive/bundle.yaml>
+**bundle-name**: A name of a bundle associated with this spell, for exmaple, **canonical-kubernetes**
 
 *metadata.yaml example*:
 
 ```yaml
 cloud-whitelist:
-- localhost
-friendly-name: OpenStack with NovaLXD
+- maas
+friendly-name: OpenStack with NovaKVM
 options-whitelist:
   keystone:
   - admin-password
@@ -82,6 +81,7 @@ options-whitelist:
   - ext-port
   nova-compute:
   - virt-type
+bundle-name: openstack-base
 ```
 
 ## Steps
@@ -110,23 +110,17 @@ An example of `00_pre-deploy` for OpenStack with NovaLXD:
 
 ```bash
 #!/bin/bash
- 
+
 set -eu
-
-# Path to executing script
-SCRIPT=$(readlink -e $0)
-
-# Directory housing script
-SCRIPTPATH=$(dirname $SCRIPT)
 
 . $CONJURE_UP_SPELLSDIR/sdk/common.sh
 
-if [[ "$JUJU_PROVIDERTYPE" == "lxd" ]]; then  
+if [[ "$JUJU_PROVIDERTYPE" == "lxd" ]]; then
     debug "Running pre-deploy for $CONJURE_UP_SPELL"
-    sed "s/##MODEL##/$JUJU_MODEL/" $SCRIPTPATH/lxd-profile.yaml | lxc profile edit "juju-$JUJU_MODEL" || exposeResult "Failed to set profile" $? "false" 
+    sed "s/##MODEL##/$JUJU_MODEL/" $(scriptPath)/lxd-profile.yaml | lxc profile edit "juju-$JUJU_MODEL" || exposeResult "Failed to set profile" $? "false"
 fi
 
-exposeResult "Successful pre-deploy." 0 "true" 
+exposeResult "Successful pre-deploy." 0 "true"
 ```
 
 Notes on the above script:
@@ -160,17 +154,11 @@ An example of `00_deploy-done` for OpenStack with NovaLXD:
 #!/bin/bash
 set -eu
 
-# Path to executing script
-SCRIPT=$(readlink -e $0)
-
-# Directory housing script
-SCRIPTPATH=$(dirname $SCRIPT)
-
 . $CONJURE_UP_SPELLSDIR/sdk/common.sh
 
-juju wait -m $JUJU_CONTROLLER:$JUJU_MODEL 
+juju wait -m $JUJU_CONTROLLER:$JUJU_MODEL
 
-exposeResult "Applications Ready" 0 "true" 
+exposeResult "Applications Ready" 0 "true"
 ```
 
 - `juju wait` is included with conjure-up and allows us to easily determine
@@ -198,6 +186,7 @@ The metadata for a step consists of:
   within conjure-up.
 - `required`: Boolean to indicate that this step is a requirement and has to be
   run.
+- `sudo`: Boolean to indicate if this step requires elevated priviledges.
 - `additional-input`: Additional configuration variables that can be changed by
   the user within conjure-up.
 
@@ -233,17 +222,9 @@ additional-input:
 A full example of `step-01_keypair` script:
 
 ```bash
-#!/bin/bash
+. $CONJURE_UP_SPELLSDIR/sdk/common.sh
 
-# Path to executing script
-SCRIPT=$(readlink -e $0)
-
-# Directory housing script
-SCRIPTPATH=$(dirname $SCRIPT)
-
-. $SCRIPTPATH/share/common.sh
-
-_ssh_public_key=$(expandPath $SSHPUBLICKEY) 
+_ssh_public_key=$(expandPath $SSHPUBLICKEY)
 debug "Environment Variables: $_ssh_public_key"
 
 tmpfile=$(mktemp)
@@ -255,10 +236,10 @@ sudo apt -qyf install python3-openstackclient > /dev/null 2>&1
 EOF
 
 # write credentials
-$SCRIPTPATH/share/novarc >> $tmpfile
+$(scriptPath)/share/novarc >> $tmpfile
 
 # include lib
-cat $SCRIPTPATH/share/common.sh >> $tmpfile
+cat $(scriptPath)/share/common.sh >> $tmpfile
 
 if [ ! -f $_ssh_public_key ]; then
     debug "Couldnt find $_ssh_public_key, attempting to create one: " ${_ssh_public_key%.*}
@@ -270,10 +251,10 @@ fi
 echo "export SSHPUBLICKEY=$HOME/.ssh/$(basename $_ssh_public_key)" >> $tmpfile
 
 # write final script
-cat $SCRIPTPATH/share/keypair.sh >> $tmpfile
+cat $(scriptPath)/share/keypair.sh >> $tmpfile
 
 debug "Creating .ssh directory on controller node"
-juju ssh -m $JUJU_CONTROLLER:$JUJU_MODEL nova-cloud-controller/0 "mkdir -p ~/.ssh && chmod 700 ~/.ssh" 
+juju ssh -m $JUJU_CONTROLLER:$JUJU_MODEL nova-cloud-controller/0 "mkdir -p ~/.ssh && chmod 700 ~/.ssh"
 
 debug "SCPing over ${_ssh_public_key%.*} to controller node"
 juju scp -m $JUJU_CONTROLLER:$JUJU_MODEL ${_ssh_public_key%.*}* nova-cloud-controller/0:.ssh/.

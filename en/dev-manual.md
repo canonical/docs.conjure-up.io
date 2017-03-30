@@ -62,7 +62,7 @@ process certain aspects of a spell. Available properties are as follows:
 
 **options-whitelist**: Additional charm options to be exposed for editing within conjure-up.
 
-**bundle-name**: A name of a bundle associated with this spell, for exmaple, **canonical-kubernetes**
+**bundle-name**: A name of a bundle associated with this spell, for example, **canonical-kubernetes**
 
 *metadata.yaml example*:
 

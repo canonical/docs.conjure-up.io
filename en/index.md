@@ -2,7 +2,7 @@ Title: conjure-up | User manual
 TODO: Needs a considerable overhaul
       Document should be renamed
 table_of_contents: True
-      
+
 # User Manual
 
 **conjure-up** is a thin layer spanning a few different underlying technologies
@@ -47,7 +47,7 @@ For **localhost** deployments the following setup is recommended:
 sudo snap install conjure-up --classic
 ```
 
-!!! Note: 
+!!! Note:
     If above command fails you’ll want to make sure **snapd** is installed with
     `sudo apt install snapd`
 
@@ -64,7 +64,7 @@ sudo reboot
 sudo snap install conjure-up --classic
 ```
 
-## Beta and development versions 
+## Beta and development versions
 
 If you want to preview of the next release, the latest beta version can be
 installed with the following command:
@@ -79,7 +79,7 @@ For the most recent changes, install the `edge` release:
 sudo snap install conjure-up --classic --edge
 ```
 
-If you have **conjure-up** already installed, you can update to a different 
+If you have **conjure-up** already installed, you can update to a different
 snap channel with:
 
 ```bash
@@ -91,16 +91,16 @@ or
 sudo snap refresh conjure-up --classic --beta
 ```
 
-## Users of LXD 
+## Users of LXD
 
 **conjure-up** currently only supports running a single installation of LXD.
 This means systems with LXD pre-installed, like Ubuntu Xenial Server, should not
 have the snapped version of LXD installed.
 
-!!! Note: 
+!!! Note:
     If you’ve never done anything with [Snaps][snappy] before feel free to skip this section.
 
-You can opt to use either or as **conjure-up** will support LXD versions 2.0.8
+You can opt to use either or as **conjure-up** will support LXD versions 2.10
 and above. To verify that you do only have a single installation of LXD, check
 that the output from the `snap list` command does not have `lxd` listed:
 

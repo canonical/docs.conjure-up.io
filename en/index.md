@@ -40,28 +40,19 @@ For **localhost** deployments the following setup is recommended:
 
 ## Installing conjure-up
 
-`conjure-up` is available on both Ubuntu Trusty 14.04 LTS and Ubuntu Xenial
-16.04 LTS
+`conjure-up` is available on Ubuntu Xenial 16.04 LTS and macOS
 
+### Ubuntu
 ```bash
 sudo snap install conjure-up --classic
 ```
-
 !!! Note:
     If above command fails you’ll want to make sure **snapd** is installed with
     `sudo apt install snapd`
 
-Trusty users will need to perform some additional steps prior to getting the
-snappy version installed.
-
-To get a working **conjure-up** install on Trusty, the following needs to be
-run:
-
-```bash
-sudo apt-get install snapd
-sudo groupadd lxd && sudo usermod -a -G lxd $USER
-sudo reboot
-sudo snap install conjure-up --classic
+### macOS
+```
+brew install conjure-up
 ```
 
 ## Beta and development versions
@@ -89,45 +80,6 @@ or
 
 ```
 sudo snap refresh conjure-up --classic --beta
-```
-
-## Users of LXD
-
-**conjure-up** currently only supports running a single installation of LXD.
-This means systems with LXD pre-installed, like Ubuntu Xenial Server, should not
-have the snapped version of LXD installed.
-
-!!! Note:
-    If you’ve never done anything with [Snaps][snappy] before feel free to skip this section.
-
-You can opt to use either or as **conjure-up** will support LXD versions 2.10
-and above. To verify that you do only have a single installation of LXD, check
-that the output from the `snap list` command does not have `lxd` listed:
-
-```
-Name  Version  Rev  Developer  Notes
-core  16.04.1  888  canonical  -
-```
-
-If `lxd` is listed in the above output, make sure you do not have the Debian
-package installed by running:
-
-```bash
-dpkg -l lxd
-```
-
-In order to fix this problem you’ll want to remove one of those:
-
-For the snap version:
-
-```bash
-sudo snap remove lxd
-```
-For the Debian package:
-
-```bash
-sudo apt-get remove lxd lxd-client
-sudo apt-get purge lxd
 ```
 
 ## Summon a Spell

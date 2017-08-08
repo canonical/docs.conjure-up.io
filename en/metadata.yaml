@@ -41,14 +41,14 @@ navigation:
             - title: Region Selection
               location: walkthrough.md#region-selection
 
+            - title: Configure Spell
+              location: walkthrough.md#configure-spell
+
             - title: Application list
               location: walkthrough.md#application-list
 
             - title: Application configuration
               location: walkthrough.md#application-configuration
-
-            - title: Additional tasks
-              location: walkthrough.md#additional-application-tasks
 
             - title: Bootstrap
               location: walkthrough.md#bootstrap

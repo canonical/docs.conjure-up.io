@@ -36,7 +36,10 @@ the ability to enter new ones
 
 ![Credentials Selection][credentialsselection]
 
-If no credentials are found, selecting **Add a New credential** will prompt you for those
+If no credentials are found, selecting **Add a New credential** will prompt you for those.
+
+!!! Note: If you are using a private cloud, you may also need to provide the
+endpoint or connection information here.
 
 ***Figure: Add new credential***
 
@@ -44,7 +47,7 @@ If no credentials are found, selecting **Add a New credential** will prompt you 
 
 ## Region Selection
 
-Most clouds provide you with a list of regions in which to deploy your spell into.
+Most clouds provide you with a list of regions where you can deploy your spell.
 
 ***Figure: Region selection***
 
@@ -53,6 +56,19 @@ Most clouds provide you with a list of regions in which to deploy your spell int
 !!! Note:
     If **vsphere** is selected, then those regions are generated from vSphere's
     known datacenters. For more information on using **conjure-up** with VMware vSphere, [click here](providers/vsphere.html).
+
+## Configure Spell
+
+These additional steps encapsulate the operational tasks to perform to your
+deployment in order to start using your big software. In the below figure you’ll
+notice that this walks you through downloading the required **kubectl** tool to
+work with your new cluster. Additionally, it’ll contact your cluster and grab
+the necessary information to display for you on the following summary screen.
+
+***Figure: Steps Configuration***
+
+![Steps configuration][stepsconfig]
+
 
 ## Application List
 
@@ -75,26 +91,11 @@ can increase the amount of units to deploy of Elasticsearch.
 
 ![Application configuration][appconfig]
 
-## Additional application tasks
-
-These additional steps encapsulate the operational tasks to perform to your
-deployment in order to start using your big software. In **Figure 7** you’ll
-notice that this walks you through downloading the required **kubectl** tool to
-work with your new cluster. Additionally, it’ll contact your cluster and grab
-the necessary information to display for you on the following summary screen.
-
-***Figure: Steps Configuration***
-
-![Steps configuration][stepsconfig]
-
 ## Bootstrap
 
 Once the applications are deployed, and if no previously bootstrapped cloud
 exist, you will be presented with a wait screen that gives you the status of
 the current bootstrap.
-
-!!! Note:
-    If an existing cloud is already bootstrapped you will not see this view.
 
 ***Figure:  Bootstrap Wait Screen***
 
@@ -121,10 +122,14 @@ how to access and use your **kubectl** binary along with the Kubernetes
 such as Filebeat and Topbeat.
 
 ***Figure: Summary***
-![summary][summary]
+<< update screenshot >>
 
 Pressing `Q` will return you back to the shell with your deployment left
 intact.
+
+!!! Note:
+    Once you've exited **conjure-up** you can still manage your
+    deployments via `juju` command. Please have a look at [the Juju documentation](https://jujucharms.com/docs/) for more information.
 
 <!-- LINKS -->
 

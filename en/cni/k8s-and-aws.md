@@ -142,4 +142,4 @@ test
 
 
 <!-- IMAGES -->
-[spellselection]: ../../media/cni/hello-world-ex.png
+[hello-world]: ../../media/cni/hello-world-ex.png

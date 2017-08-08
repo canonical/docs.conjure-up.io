@@ -15,7 +15,7 @@ deployed. For this walkthrough we will select **Canonical Kubernetes**.
     Once a Spell is selected you can view its **README** at any time by
     pressing `R`
 
-***Figure 1: Spell selection***
+***Figure: Spell selection***
 
 ![Spell selection][spellselection]
 
@@ -23,9 +23,36 @@ deployed. For this walkthrough we will select **Canonical Kubernetes**.
 
 Next, a list of publicly supported clouds will be presented.
 
-***Figure 2: Cloud selection***
+***Figure: Cloud selection***
 
 ![Cloud selection][cloudselection]
+
+## Credentials
+
+**conjure-up** will load any existing credentials for the selected cloud or give
+the ability to enter new ones
+
+***Figure: Credentials Selection***
+
+![Credentials Selection][credentialsselection]
+
+If no credentials are found, selecting **Add a New credential** will prompt you for those
+
+***Figure: Add new credential***
+
+![Add New Credential][newcredential]
+
+## Region Selection
+
+Most clouds provide you with a list of regions in which to deploy your spell into.
+
+***Figure: Region selection***
+
+![Region Selection][regionselection]
+
+!!! Note:
+    If **vsphere** is selected, then those regions are generated from vSphere's
+    known datacenters. For more information on using **conjure-up** with VMware vSphere, [click here](providers/vsphere.html).
 
 ## Application List
 
@@ -34,7 +61,7 @@ make up the **Canonical Kubernetes** deployment. This screen allows you to
 deploy each application individually or make additional configuration changes
 to the selected application (covered in the next step).
 
-***Figure 3: Application list***
+***Figure: Application list***
 
 ![Application list][applicationlist]
 
@@ -44,9 +71,21 @@ In the configuration screen for the application, you have the ability to
 configure certain aspects prior to deployment. For example, in **Figure 4** you
 can increase the amount of units to deploy of Elasticsearch.
 
-***Figure 4: Application Config***
+***Figure: Application Config***
 
 ![Application configuration][appconfig]
+
+## Additional application tasks
+
+These additional steps encapsulate the operational tasks to perform to your
+deployment in order to start using your big software. In **Figure 7** you’ll
+notice that this walks you through downloading the required **kubectl** tool to
+work with your new cluster. Additionally, it’ll contact your cluster and grab
+the necessary information to display for you on the following summary screen.
+
+***Figure: Steps Configuration***
+
+![Steps configuration][stepsconfig]
 
 ## Bootstrap
 
@@ -57,7 +96,7 @@ the current bootstrap.
 !!! Note:
     If an existing cloud is already bootstrapped you will not see this view.
 
-***Figure 5:  Bootstrap Wait Screen***
+***Figure:  Bootstrap Wait Screen***
 
 ![Bootstrap wait][bootstrapwait]
 
@@ -69,22 +108,9 @@ allocated machines, setting their relations between the applications, and
 verifying that each application starts successfully. You’ll notice that once
 the applications are ready they will have a green checkmark beside them.
 
-***Figure 6: Deployment Status Screen***
+***Figure: Deployment Status Screen***
 
 ![Deploy status][deploystatus]
-
-## Additional application tasks
-
-This is the real benefit of **conjure-up**. These additional steps encapsulate
-the operational tasks to perform to your deployment in order to start using
-your big software. In **Figure 7** you’ll notice that this walks you through
-downloading the required **kubectl** tool to work with your new cluster.
-Additionally, it’ll contact your cluster and grab the necessary information to
-display for you on the following summary screen.
-
-***Figure 7: Steps Configuration***
-
-![Steps configuration][stepsconfig]
 
 ## Summary
 
@@ -94,7 +120,7 @@ how to access and use your **kubectl** binary along with the Kubernetes
 **cluster-info** and how to access the **Kibana** dashboard for viewing things
 such as Filebeat and Topbeat.
 
-***Figure 8: Summary***
+***Figure: Summary***
 ![summary][summary]
 
 Pressing `Q` will return you back to the shell with your deployment left
@@ -105,6 +131,9 @@ intact.
 <!-- IMAGES -->
 [spellselection]: ../media/spell-selection.png
 [cloudselection]: ../media/cloud-selection.png
+[credentialsselection]: ../media/choose-credential.png
+[newcredential]: ../media/add-credential.png
+[regionselection]: ../media/choose-region.png
 [applicationlist]: ../media/application-list.png
 [appconfig]: ../media/application-config.png
 [bootstrapwait]: ../media/bootstrap-wait.png

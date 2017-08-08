@@ -38,11 +38,20 @@ navigation:
             - title: Cloud selection
               location: walkthrough.md#cloud-selection
 
+            - title: Credentials
+              location: walkthrough.md#credentials
+
+            - title: Region Selection
+              location: walkthrough.md#region-selection
+
             - title: Application list
               location: walkthrough.md#application-list
 
             - title: Application configuration
               location: walkthrough.md#application-configuration
+
+            - title: Additional tasks
+              location: walkthrough.md#additional-application-tasks
 
             - title: Bootstrap
               location: walkthrough.md#bootstrap
@@ -50,11 +59,9 @@ navigation:
             - title: Deployment status
               location: walkthrough.md#deployment-status
 
-            - title: Additional tasks
-              location: walkthrough.md#additional-application-tasks
-
             - title: Summary
               location: walkthrough.md#summary
+
 
     - title: Advanced summoning
       location: usage.md
@@ -81,6 +88,9 @@ navigation:
 
             - title: Running remotely
               location: usage.md#running-conjure-up-remotely
+
+            - title: k8s and AWS Cloud Native Integration
+              location: cni/k8s-and-aws.md
 
     - title: Troubleshooting
       location: troubleshoot.md

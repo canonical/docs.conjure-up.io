@@ -3,7 +3,7 @@ table_of_contents: True
 
 # Spell Walkthrough
 
-Follow through our screenshot walkthrough of deploying **The Canonical
+Follow through our screenshot walkthrough of deploying **Canonical
 Distribution of Kubernetes**, Enterprise Kubernetes, anywhere.
 
 ## Spell selection
@@ -116,7 +116,7 @@ the applications are ready they will have a green checkmark beside them.
 ## Summary
 
 Finally, the summary screen presents you with all the information necessary to
-access and start using your big software. In **Figure 8** we provide you with
+access and start using your big software. In the below figure we provide you with
 how to access and use your **kubectl** binary along with the Kubernetes
 **cluster-info** and how to access the **Kibana** dashboard for viewing things
 such as Filebeat and Topbeat.

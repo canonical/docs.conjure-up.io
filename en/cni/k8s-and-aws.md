@@ -121,10 +121,11 @@ Once that is running, you should be able to launch the pod, write data to `/pv`,
 delete the pod, recreate the pod, and verify that the data is still available:
 
 ```
-$ kubectl exec -it busybox -- /bin/sh -c ‘echo “test” > /pv/test’
+$ kubectl exec -it busybox -- /bin/sh -c 'echo "test" > /pv/test'
 $ kubectl delete pod busybox --now
 $ kubectl create -f busybox-with-pvc.yaml
-$ kubectl run -it busybox -- /bin/sh ‘cat /pv/test’
+# wait for container to start...
+$ kubectl exec -it busybox -- /bin/sh -c 'cat /pv/test'
 test
 ```
 

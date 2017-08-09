@@ -123,8 +123,9 @@ delete the pod, recreate the pod, and verify that the data is still available:
 ```
 $ kubectl exec -it busybox -- /bin/sh -c 'echo "test" > /pv/test'
 $ kubectl delete pod busybox --now
+# wait for container to be deleted...
 $ kubectl create -f busybox-with-pvc.yaml
-# wait for container to start...
+# wait for container to start again...
 $ kubectl exec -it busybox -- /bin/sh -c 'cat /pv/test'
 test
 ```

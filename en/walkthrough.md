@@ -21,7 +21,8 @@ deployed. For this walkthrough we will select **Canonical Kubernetes**.
 
 ## Cloud Selection
 
-Next, a list of publicly supported clouds will be presented.
+Next, a list of supported clouds will be presented. You can choose from a public
+cloud, or you can create or connect to a private cloud.
 
 ***Figure: Cloud selection***
 
@@ -116,13 +117,15 @@ the applications are ready they will have a green checkmark beside them.
 ## Summary
 
 Finally, the summary screen presents you with all the information necessary to
-access and start using your big software. In the below figure we provide you with
-how to access and use your **kubectl** binary along with the Kubernetes
-**cluster-info** and how to access the **Kibana** dashboard for viewing things
-such as Filebeat and Topbeat.
+access and start using your big software.
 
 ***Figure: Summary***
 << update screenshot >>
+
+!!! Note:
+    In the above figure you can see that Cloud Native Integration has been
+    enabled and is now available to your Kubernetes cluster. Please see [k8s and
+    aws cloud native integration](cni/k8s-and-aws.html) for more information.
 
 Pressing `Q` will return you back to the shell with your deployment left
 intact.

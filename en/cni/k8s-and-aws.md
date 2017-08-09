@@ -132,13 +132,13 @@ test
 
 - If conjure-up reports “Unable to enable native integration,” check `~/.cache/conjure-up/<spell>/steps/step-03_enable-cni.err` log and AWS credential permissions
 - Look for pods stuck in non-running state (`kubectl get po --all-namespaces`). For any pods not running:
-  - Check pod event log: `kubectl describe po <pod-name>`
-  - `kubectl logs <pod-name>`
+    - Check pod event log: `kubectl describe po <pod-name>`
+    - `kubectl logs <pod-name>`
 - Check kubelet for errors on kubernetes-worker units: `journalctl -u snap.kubelet.daemon`
-- Check kube-controller-manager logs (`journalctl -u snap.kube-controller-manager.daemon` on kubernetes-master/0)
+- Check kube-controller-manager logs (`journalctl -u snap.kube-controller-manager.daemon` on **kubernetes-master/0**)
 - For EBS related issues:
-  - `kubectl describe sc <StorageClass-name>`
-  - `kubectl describe pvc <PersistentVolumeClaim-name>`
+    - `kubectl describe sc <StorageClass-name>`
+    - `kubectl describe pvc <PersistentVolumeClaim-name>`
 
 
 <!-- IMAGES -->

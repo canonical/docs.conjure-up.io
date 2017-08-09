@@ -39,8 +39,9 @@ the ability to enter new ones
 
 If no credentials are found, selecting **Add a New credential** will prompt you for those.
 
-!!! Note: If you are using a private cloud, you may also need to provide the
-endpoint or connection information here.
+!!! Note:
+    If you are using a private cloud, you may also need to provide the
+    endpoint or connection information here.
 
 ***Figure: Add new credential***
 
@@ -120,7 +121,7 @@ Finally, the summary screen presents you with all the information necessary to
 access and start using your big software.
 
 ***Figure: Summary***
-<< update screenshot >>
+![Deploy Summary][summary]
 
 !!! Note:
     In the above figure you can see that Cloud Native Integration has been

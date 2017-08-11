@@ -18,9 +18,6 @@ navigation:
             - title: Beta versions
               location: index.md#beta-and-development-versions
 
-            - title: Users of LXD
-              location: index.md#users-of-lxd
-
             - title: Summon a spell
               location: index.md#summon-a-spell
 
@@ -38,6 +35,15 @@ navigation:
             - title: Cloud selection
               location: walkthrough.md#cloud-selection
 
+            - title: Credentials
+              location: walkthrough.md#credentials
+
+            - title: Region Selection
+              location: walkthrough.md#region-selection
+
+            - title: Configure Spell
+              location: walkthrough.md#configure-spell
+
             - title: Application list
               location: walkthrough.md#application-list
 
@@ -50,11 +56,9 @@ navigation:
             - title: Deployment status
               location: walkthrough.md#deployment-status
 
-            - title: Additional tasks
-              location: walkthrough.md#additional-application-tasks
-
             - title: Summary
               location: walkthrough.md#summary
+
 
     - title: Advanced summoning
       location: usage.md
@@ -81,6 +85,9 @@ navigation:
 
             - title: Running remotely
               location: usage.md#running-conjure-up-remotely
+
+            - title: k8s and AWS Cloud Native Integration
+              location: cni/k8s-and-aws.md
 
     - title: Troubleshooting
       location: troubleshoot.md

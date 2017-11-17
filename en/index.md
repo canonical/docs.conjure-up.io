@@ -172,7 +172,7 @@ used_by: []
 
 ## Summon a Spell
 
-To deploy solutions such as OpenStack you will summon a spell:
+To deploy solutions such as Kubernetes you will summon a spell:
 
 ```bash
 $ conjure-up kubernetes

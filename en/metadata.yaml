@@ -18,6 +18,9 @@ navigation:
             - title: Beta versions
               location: index.md#beta-and-development-versions
 
+            - title: Users of LXD
+              location: index.md#users-of-lxd
+
             - title: Summon a spell
               location: index.md#summon-a-spell
 

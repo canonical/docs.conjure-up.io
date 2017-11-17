@@ -43,7 +43,7 @@ For **localhost** deployments the following setup is recommended:
 
 ### Ubuntu
 ```bash
-$ sudo snap install conjure-up --classic
+sudo snap install conjure-up --classic
 ```
 !!! Note:
     If above command fails you’ll want to make sure **snapd** is installed with
@@ -51,7 +51,7 @@ $ sudo snap install conjure-up --classic
 
 ### macOS
 ```
-$ brew install conjure-up
+brew install conjure-up
 ```
 
 ## Beta and development versions
@@ -60,7 +60,7 @@ If you want to preview of the next release, the latest beta version can be
 installed with the following command:
 
 ```bash
-$ sudo snap install conjure-up --classic --beta
+sudo snap install conjure-up --classic --beta
 ```
 
 For the most recent changes, install the `edge` release:
@@ -73,12 +73,12 @@ If you have **conjure-up** already installed, you can update to a different
 snap channel with:
 
 ```bash
-$ sudo snap refresh conjure-up --classic --edge
+sudo snap refresh conjure-up --classic --edge
 ```
 or
 
 ```
-$ sudo snap refresh conjure-up --classic --beta
+sudo snap refresh conjure-up --classic --beta
 ```
 
 ## Users of LXD
@@ -86,12 +86,12 @@ $ sudo snap refresh conjure-up --classic --beta
 **conjure-up** requires that the minimum version of LXD be **2.18**. Additionally,
 LXD should be configured prior to running.
 
-### Recommended LXD Setup
+### Install LXD
 
 [Snaps][snappy] are the recommended installation method. To install LXD run the following:
 
 ```
-$ sudo snap install lxd
+sudo snap install lxd
 /snap/bin/lxd init --auto  #  Notice there is NO __sudo__ prepended here.
 ```
 
@@ -100,15 +100,22 @@ $ sudo snap install lxd
 At least one storage pool must be created and the default profile be set to use that storage device:
 
 ```
-$ /snap/bin/lxc storage list
+/snap/bin/lxc storage list
+```
+
+```
 +---------+-------------+--------+------------------------------------------------+---------+
 |  NAME   | DESCRIPTION | DRIVER |                     SOURCE                     | USED BY |
 +---------+-------------+--------+------------------------------------------------+---------+
 | default |             | dir    | /var/snap/lxd/common/lxd/storage-pools/default | 1       |
 +---------+-------------+--------+------------------------------------------------+---------+
+```
 
+```
+/snap/bin/lxc storage show default
+```
 
-$ /snap/bin/lxc storage show default
+```
 config:
   source: /var/snap/lxd/common/lxd/storage-pools/default
 description: ""
@@ -132,7 +139,10 @@ For localhost deployments, LXD must have a network bridge defined:
 To verify that a bridge is configured properly you will need to inspect the config:
 
 ```
-$ /snap/bin/lxc network show lxdbr0
+/snap/bin/lxc network show lxdbr0
+```
+
+```
 config:
   ipv4.address: 10.101.64.1/24
   ipv4.nat: "true"
@@ -148,7 +158,10 @@ managed: true
 You will also want to make sure that the LXD default profile is set to use **lxdbr0** as its bridge:
 
 ```
-$ /snap/bin/lxc profile show default
+/snap/bin/lxc profile show default
+```
+
+```
 config: {}
 description: Default LXD profile
 devices:
@@ -175,13 +188,13 @@ used_by: []
 To deploy solutions such as Kubernetes you will summon a spell:
 
 ```bash
-$ conjure-up kubernetes
+conjure-up kubernetes
 ```
 
 To see a list of all available spells run:
 
 ```bash
-$ conjure-up
+conjure-up
 ```
 
 !!! Note:
@@ -193,13 +206,13 @@ $ conjure-up
 To remove deployments:
 
 ```bash
-$ conjure-down
+conjure-down
 ```
 
 To uninstall **conjure-up** itself:
 
 ```bash
-$ sudo snap remove conjure-up
+sudo snap remove conjure-up
 ```
 
 <!-- LINKS -->

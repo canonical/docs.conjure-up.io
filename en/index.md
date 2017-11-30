@@ -92,7 +92,7 @@ LXD should be configured prior to running.
 
 ```
 sudo snap install lxd
-/snap/bin/lxd init --auto  #  Notice there is NO __sudo__ prepended here.
+/snap/bin/lxd init  #  Notice there is NO __sudo__ prepended here.
 ```
 
 ### LXD Storage

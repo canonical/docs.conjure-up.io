@@ -95,14 +95,25 @@ LXD should be configured prior to running.
 
 ### Install LXD
 
-[Snaps][snappy] are the recommended installation method. In upcoming Ubuntu
-releases the snap version of LXD will be the only recommended way of installing
-and using LXD. For the best experience, it is recommended to remove the **deb**
-LXD packaging:
+To install LXD run the following:
 
 ```
-sudo apt-get purge lxd lxd-client
+sudo snap install lxd
+/snap/bin/lxd init  #  Notice there is NO __sudo__ prepended here.
 ```
+
+[Snaps][snappy] are the recommended installation method. In upcoming Ubuntu
+releases the snap version of LXD will be the only recommended way of installing
+and using LXD. For the best experience, it is recommended to migrate from the **deb**
+LXD packaging:
+
+
+```
+/snap/bin/lxd.migrate
+```
+
+This will move all container specific data to the snap version and clean up the
+unused debian packages.
 
 **Ubuntu 16.04 for Desktops**
 
@@ -133,13 +144,6 @@ If not, simply re-run the `usermod` and `newgrp` commands:
 ```
 sudo usermod -a -G lxd $USER
 newgrp lxd
-```
-
-To install LXD run the following:
-
-```
-sudo snap install lxd
-/snap/bin/lxd init  #  Notice there is NO __sudo__ prepended here.
 ```
 
 ### LXD Storage
@@ -234,6 +238,13 @@ used_by: []
 ```
 lxc launch ubuntu:16.04 u1
 lxc exec u1 ping ubuntu.com
+```
+
+Once satisfied your container can reach out to the internet, you can stop and remove that container:
+
+```
+lxc stop u1
+lxc delete u1
 ```
 
 

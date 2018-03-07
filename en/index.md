@@ -10,9 +10,7 @@ table_of_contents: True
 
 **conjure-up** provides you with a streamlined, turnkey solution. In order to
 provide that streamlined approach, **conjure-up** makes use of processing
-scripts. These scripts are executed at 3 different times in the deployment:
-just after a Juju bootstrap, just before a Juju deploy, and right after a Juju
-deploy.
+scripts.
 
 Processing scripts give you the flexibility to alter LXD profiles in order to
 expose additional network interfaces to Neutron services, import images into
@@ -36,6 +34,15 @@ For **localhost** deployments the following setup is recommended:
 - 16G RAM
 - 32G Swap
 - 250G SSD
+
+## Update your system
+
+It is always recommended to have the latest packages installed prior to running `conjure-up`:
+
+```
+sudo apt update
+sudo apt upgrade
+```
 
 ## Installing conjure-up
 
@@ -88,7 +95,47 @@ LXD should be configured prior to running.
 
 ### Install LXD
 
-[Snaps][snappy] are the recommended installation method. To install LXD run the following:
+[Snaps][snappy] are the recommended installation method. In upcoming Ubuntu
+releases the snap version of LXD will be the only recommended way of installing
+and using LXD. For the best experience, it is recommended to remove the **deb**
+LXD packaging:
+
+```
+sudo apt-get purge lxd lxd-client
+```
+
+**Ubuntu 16.04 for Desktops**
+
+In order to access the LXD service your **$USER** will need to be apart of the **lxd** group. To add your **$USER** to lxd group perform the following:
+
+
+```
+sudo usermod -a -G lxd $USER
+newgrp lxd
+```
+
+!!! Note:
+    This only allows the current shell to have access to the **lxd**
+    group. The recommended way is to completely logout of your system so that the
+    **lxd** group can be properly applied.
+
+**Ubuntu 16.04 for Servers**
+
+By default, Ubuntu Server has the **lxd** group associated with your default **$USER**. To verify, run the following:
+
+```
+id
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare),129(lxd)
+```
+
+If not, simply re-run the `usermod` and `newgrp` commands:
+
+```
+sudo usermod -a -G lxd $USER
+newgrp lxd
+```
+
+To install LXD run the following:
 
 ```
 sudo snap install lxd
@@ -181,6 +228,13 @@ used_by: []
     If this is a brand new LXD install and your profile does not look like the
     one above, run `/snap/bin/lxc profile edit default` and make the necessary
     adjustments.
+
+### Verify container creation and network accessibility
+
+```
+lxc launch ubuntu:16.04 u1
+lxc exec u1 ping ubuntu.com
+```
 
 
 ## Summon a Spell

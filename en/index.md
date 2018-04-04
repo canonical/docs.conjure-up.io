@@ -90,7 +90,7 @@ sudo snap refresh conjure-up --classic --beta
 
 ## Users of LXD
 
-**conjure-up** requires that the minimum version of LXD be **2.18**. Additionally,
+**conjure-up** requires that the minimum version of LXD be **3.0.0**. Additionally,
 LXD should be configured prior to running.
 
 ### Install LXD

@@ -15,8 +15,8 @@ navigation:
             - title: Installing conjure-up
               location: index.md#installing-conjure-up
 
-            - title: Beta versions
-              location: index.md#beta-and-development-versions
+            - title: Upcoming releases
+              location: index.md#upcoming-releases
 
             - title: Users of LXD
               location: index.md#users-of-lxd
@@ -68,6 +68,16 @@ navigation:
 
       children:
 
+            - title: Conjurefile
+              location: conjurefile.md
+
+              children:
+                - title: Customising Steps
+                  location: conjurefile.md#customising-steps
+
+                - title: Customising Addons
+                  location: conjurefile.md#customising-addons
+
             - title: Channels
               location: usage.md#channels
 
@@ -77,14 +87,8 @@ navigation:
             - title: Remote web server
               location: usage.md#remote-web-server
 
-            - title: Headless mode
-              location: usage.md#running-in-headless-mode
-
-            - title: Customising deployment
-              location: usage.md#customising-deployment-phases
-
-            - title: Customising headless
-              location: usage.md#customising-headless-mode
+            - title: Automating conjure-up
+              location: usage.md#automating-conjure-up
 
             - title: Running remotely
               location: usage.md#running-conjure-up-remotely
@@ -103,14 +107,38 @@ navigation:
             - title: Unicode
               location: troubleshoot.md#unicode
 
-            - title: Error states
-              location: troubleshoot.md#applications-in-error-state
+            - title: Common Problems
+              location: troubleshoot.md#common-problems
 
-            - title: LXD
-              location: troubleshoot.md#lxd
+ - title: Spellbooks
+   location: spellbooks.md
 
-            - title: OpenStack
-              location: troubleshoot.md#openstack
+   children:
+     - title: Kubernetes
+       location: spellbooks/kubernetes.md
+
+       children:
+         - title: Steps
+           location: spellbooks/kubernetes.md#steps
+
+         - title: Addons
+           location: spellbooks/kubernetes.md#addons
+
+         - title: Limitations
+           location: spellbooks/kubernetes.md#limitations
+
+     - title: OpenStack
+       location: spellbooks/openstack.md
+
+       children:
+         - title: Steps
+           location: spellbooks/openstack.md#steps
+
+         - title: Addons
+           location: spellbooks/openstack.md#addons
+
+         - title: Limitations
+           location: spellbooks/openstack.md#limitations
 
  - title: Developer Manual
    location: dev-manual.md

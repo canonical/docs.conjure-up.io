@@ -1,2 +1,2 @@
-(|en/?|2.4.0/?)?: /2.4.0/en/
-en/(?P<page>.+): /2.4.0/en/{page}
+(|en/?|stable/?)?: /stable/en/
+en/(?P<page>.+): /stable/en/{page}

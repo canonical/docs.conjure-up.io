@@ -115,10 +115,12 @@ LXD packaging:
 This will move all container specific data to the snap version and clean up the
 unused debian packages.
 
+
 **Ubuntu for Desktops**
 
 In order to access the LXD service your **$USER** will need to be apart of the
 **lxd** group. To add your **$USER** to lxd group perform the following:
+
 
 
 ```
@@ -139,6 +141,7 @@ By default, Ubuntu Server has the **lxd** group associated with your default
 ```
 id
 uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),27(sudo),129(lxd)
+
 ```
 
 If not, simply re-run the `usermod` and `newgrp` commands:
@@ -177,7 +180,6 @@ driver: dir
 used_by:
 - /1.0/profiles/default
 ```
-
 !!! Note:
     If you are planning on deploying Kubernetes onto LXD via the localhost
     provider, please see the [limitations section][k8slimitation] of the

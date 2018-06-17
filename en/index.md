@@ -61,7 +61,7 @@ sudo snap install conjure-up --classic
 brew install conjure-up
 ```
 
-## Beta and development versions
+## Upcoming releases
 
 If you want to preview of the next release, the latest beta version can be
 installed with the following command:
@@ -115,9 +115,12 @@ LXD packaging:
 This will move all container specific data to the snap version and clean up the
 unused debian packages.
 
-**Ubuntu 16.04 for Desktops**
 
-In order to access the LXD service your **$USER** will need to be apart of the **lxd** group. To add your **$USER** to lxd group perform the following:
+**Ubuntu for Desktops**
+
+In order to access the LXD service your **$USER** will need to be apart of the
+**lxd** group. To add your **$USER** to lxd group perform the following:
+
 
 
 ```
@@ -130,13 +133,15 @@ newgrp lxd
     group. The recommended way is to completely logout of your system so that the
     **lxd** group can be properly applied.
 
-**Ubuntu 16.04 for Servers**
+**Ubuntu for Servers**
 
-By default, Ubuntu Server has the **lxd** group associated with your default **$USER**. To verify, run the following:
+By default, Ubuntu Server has the **lxd** group associated with your default
+**$USER**. To verify, run the following:
 
 ```
 id
-uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare),129(lxd)
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),27(sudo),129(lxd)
+
 ```
 
 If not, simply re-run the `usermod` and `newgrp` commands:
@@ -175,6 +180,10 @@ driver: dir
 used_by:
 - /1.0/profiles/default
 ```
+!!! Note:
+    If you are planning on deploying Kubernetes onto LXD via the localhost
+    provider, please see the [limitations section][k8slimitation] of the
+    **Kubernetes Spellbook**.
 
 ### LXD Networking
 
@@ -289,5 +298,6 @@ sudo snap remove conjure-up
 [snappy]: https://snapcraft.io/
 [applist]: ./index.md#application-list
 [advancedspells]: ./usage.md
+[k8slimitation]: ./spellbooks/kubernetes.md#limitations
 
 <!-- IMAGES -->

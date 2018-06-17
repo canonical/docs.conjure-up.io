@@ -1,0 +1,2 @@
+(|en/?|stable/?)?: /stable/en/
+en/(?P<page>.+): /stable/en/{page}

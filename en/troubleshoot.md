@@ -52,7 +52,7 @@ LC_IDENTIFICATION="en_US.UTF-8"
 LC_ALL=
 ```
 
-## Common Spell Problems
+## Common Problems
 
 ### Applications in Error state
 
@@ -60,15 +60,15 @@ One of the biggest reasons why applications will error out during deployment is
 due to not having enough disk space available. Please make sure you meet the
 [Hardware Requirements][hardware] prior to deploying spells.
 
-## LXD
+### LXD
 
-### Failed deployments if IPv6 is enabled
+#### Failed deployments if IPv6 is enabled
 
 Currently **conjure-up** does not support the use of IPv6. If you are running
 LXD and have a bridge that has IPv6 enabled **conjure-up** will fail. The
 output will include an explanation why and information for disabling IPv6.
 
-### Disable IPv6 on LXD versions 2.2 and below
+#### Disable IPv6 on LXD versions 2.2 and below
 
 LXD version 2.0 is the default version on Ubuntu Xenial 16.04. To disable IPv6
 you’ll need to edit `/etc/default/lxd-bridge` and make sure the following
@@ -88,7 +88,7 @@ LXD_IPV6_NETWORK=""
 LXD_IPV6_NAT="false"
 ```
 
-### Disable IPv6 on LXD versions 2.4 and above
+#### Disable IPv6 on LXD versions 2.4 and above
 
 To disable IPv6 on your LXD bridge (`lxdbr0` by default) run the following:
 
@@ -97,25 +97,5 @@ lxc network set lxdbr0 ipv6.nat false
 lxc network set lxdbr0 ipv6.address none
 ```
 
-## OpenStack
-
-
-### Deployment gets part way through and seems to hang under VSphere
-
-The most common cause of a "hung" deployment running inside VSphere is network
-related. The most common solution is to enable promiscuous mode in your virtual
-switch, Please see [the VMware KB article][vmwarekb] on enabling that feature.
-
-### config-changed error for neutron-gateway
-
-This error can happen if you have not set your **bridge-mappings** and
-**data-port** during the [Application List][applist] portion of the deployment.
-
-Please see [the Neutron Gateway charm documentation][neutron] under **Port
-Configuration** for more information.
-
 <!-- LINKS -->
 [hardware]: ./index.md#hardware-requirements
-[vmwarekb]: https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1004099
-[applist]: ./index.md#application-list
-[neutron]: https://jujucharms.com/neutron-gateway/

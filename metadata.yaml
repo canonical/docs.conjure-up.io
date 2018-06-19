@@ -1,2 +1,18 @@
 site_title: Conjure-up documentation
-site_logo_url: 
+site_logo_url: https://assets.ubuntu.com/v1/8c237d84-conjure-up-logo-black.svg
+site_favicon: https://assets.ubuntu.com/v1/cb22ba5d-favicon-16x16.png
+site_remove_navigation_title: true
+
+site_navigation:
+  - title: User manual
+    location: /
+
+  - title: Developer manual
+    location: /dev-manual
+
+site_footer_links:
+  - title: 'Legal information'
+    location: https://www.ubuntu.com/legal
+    
+  - title: 'Report a bug on this site'
+    location: https://github.com/CanonicalLtd/maas-docs/issues/new

@@ -5,10 +5,10 @@ site_remove_navigation_title: true
 
 site_navigation:
   - title: User manual
-    location: /
+    location: /en
 
   - title: Developer manual
-    location: /dev-manual
+    location: /en/dev-manual
 
 site_footer_links:
   - title: 'Legal information'

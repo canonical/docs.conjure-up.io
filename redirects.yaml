@@ -1,2 +1,5 @@
 (|en/?|stable/?)?: /stable/en/
 en/(?P<page>.+): /stable/en/{page}
+# redirect links from old, numbered versions to stable
+(?P<version>[0-9-\._]+)(/|/index)?: /stable/en/
+(?P<version>[0-9-\._]+)/en/(?P<page>.+): /stable/en/{page}

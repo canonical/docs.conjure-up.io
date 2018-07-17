@@ -1,31 +1,35 @@
 navigation:
- - title: User Manual
+ - title: Home
    location: index.md
 
+ - title: User Manual
    children:
 
+    - title: Overview
+      location: user-manual.md
+
     - title: Getting started
-      location: index.md#getting-started
+      location: user-manual.md#getting-started
 
       children:
 
             - title: Hardware requirements
-              location: index.md#hardware-requirements
+              location: user-manual.md#hardware-requirements
 
             - title: Installing conjure-up
-              location: index.md#installing-conjure-up
+              location: user-manual.md#installing-conjure-up
 
             - title: Upcoming releases
-              location: index.md#upcoming-releases
+              location: user-manual.md#upcoming-releases
 
             - title: Users of LXD
-              location: index.md#users-of-lxd
+              location: user-manual.md#users-of-lxd
 
             - title: Summon a spell
-              location: index.md#summon-a-spell
+              location: user-manual.md#summon-a-spell
 
             - title: Uninstalling
-              location: index.md#uninstalling
+              location: user-manual.md#uninstalling
 
     - title: Spell walkthrough
       location: walkthrough.md#

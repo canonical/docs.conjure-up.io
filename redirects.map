@@ -1,0 +1,3 @@
+~^/(en/?)?$ /stable/en/;
+~^/en/(.+)$ /stable/en/$1;
+~^/(stable|devel)/(?!en/)(.+)?$ /$1/en/$2;

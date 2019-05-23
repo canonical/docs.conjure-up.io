@@ -160,11 +160,11 @@ navigation:
 
       children:
 
-            - title: 00-pre-deploy
-              location: dev-manual.md#00-pre-deploy
+            - title: 00_pre-deploy
+              location: dev-manual.md#00_pre-deploy
 
-            - title: 00-deploy-done
-              location: dev-manual.md#00-deploy-done
+            - title: 00_deploy-done
+              location: dev-manual.md#00_deploy-done
 
     - title: Post processing
       location: dev-manual.md#post-processing

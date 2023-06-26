@@ -1,6 +1,6 @@
 domain: docs.conjure-up.io
 
-image: prod-comms.docker-registry.canonical.com/docs.conjure-up.io
+image: prod-comms.ps5.docker-registry.canonical.com/docs.conjure-up.io
 
 useProxy: false
 
